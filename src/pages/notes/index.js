@@ -60,9 +60,14 @@ const getRandomColor = () => {
 
 function Notes() {
   const [notesCol, setNotesCol] = useState([]);
+  const [intervalId, setIntervalId] = useState(null);
 
   useEffect(() => {
     fetchTasks();
+    const id = setInterval(fetchTasks, 3000); 
+    setIntervalId(id);
+
+    return () => clearInterval(id); 
   }, []);
 
   const fetchTasks = async () => {
@@ -75,7 +80,7 @@ function Notes() {
       setNotesCol(tasksWithColors);
     } catch (error) {
       console.error('Error fetching tasks:', error);
-    }
+    } 
   };
 
   const handleTaskDeleted = (deletedTaskId) => {
