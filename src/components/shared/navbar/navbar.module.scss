@@ -1,0 +1,47 @@
+.header{
+    display: grid;
+    grid-template-columns: auto 60px;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    // border: 1px solid red;
+    padding: 0 6rem;
+    padding-top: 30px;
+    .search-bar{
+        display: flex;
+        width: 100%;
+        font-size: var(--fs-lg);
+        align-items: center;
+
+        input{
+            width: 100%;
+            padding: 12px;
+            padding: 8px 15px;
+            cursor: pointer;
+            
+            &:active{
+                border: none;
+                outline: none;
+
+            }
+        }
+        svg{
+            height: 28px;
+            width: 28px;
+            color: var(--light-gray);
+        }
+    }
+    .theme{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 22px;
+        margin-right: 36px;
+        svg{
+
+            color: var(--gray);
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
